@@ -1,0 +1,24 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/NovelGameEditor4/Project/03%20Animation%20Node/AnimationNodeView.uss?fileID=7433441132597879392&amp;guid=2c13784163191d74b9c79102fae3ecb0&amp;type=3#AnimationNodeView" />
+    <ui:VisualElement name="selection-border">
+        <ui:VisualElement name="node-border" style="background-color: rgba(58, 58, 58, 0.82); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px;">
+            <ui:VisualElement name="title">
+                <ui:Label name="title-label" text="Animation Node" class="unity-text-element unity-label" style="color: rgb(204, 204, 204); padding-right: 12px; padding-left: 12px; padding-top: 12px; padding-bottom: 2px;" />
+                <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="node-name" style="padding-left: 20px; padding-bottom: 4px; color: rgb(204, 204, 204); padding-right: 20px; padding-top: 2px;" />
+                <ui:VisualElement name="title-button-container">
+                    <ui:VisualElement name="collapse-button">
+                        <ui:VisualElement name="icon" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="contents">
+                <ui:VisualElement name="divider" class="horizontal" />
+                <ui:VisualElement name="top" style="flex-direction: row; justify-content: space-between;">
+                    <ui:VisualElement name="input" style="background-color: rgba(77, 77, 77, 0.91); border-right-width: 1px; border-top-width: 1px; border-left-color: rgb(41, 41, 41); border-right-color: rgb(41, 41, 41); border-top-color: rgb(41, 41, 41); border-bottom-color: rgb(41, 41, 41);" />
+                    <ui:VisualElement name="divider" class="vertical" />
+                    <ui:VisualElement name="output" style="background-color: rgba(77, 77, 77, 0.91); border-top-width: 1px; border-left-color: rgb(41, 41, 41); border-right-color: rgb(41, 41, 41); border-top-color: rgb(41, 41, 41); border-bottom-color: rgb(41, 41, 41); border-left-width: 1px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

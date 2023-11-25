@@ -16,6 +16,7 @@ public class UnityAnimationPlayer : NovelAnimationBehavior
 
     public async override UniTask PlayAnimationAsync()
     {
+        if (!this) return;
         if (_animator == null)
         {
             Debug.LogError("Animator reference is missing!");

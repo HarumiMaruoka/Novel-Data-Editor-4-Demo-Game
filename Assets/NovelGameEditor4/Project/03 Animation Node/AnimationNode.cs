@@ -10,7 +10,6 @@ namespace Glib.NovelGameEditor
         private Node _child = null;
         [SerializeField]
         private List<Node> _parents = new List<Node>();
-
         [SerializeField]
         private NovelAnimationController _novelAnimation;
 
@@ -40,19 +39,15 @@ namespace Glib.NovelGameEditor
 
         public override async void OnEnter()
         {
-            // Debug.Log("enter");
-            await _novelAnimation.PlayAnimation(default);
+            _novelAnimation.OnEnter(this);
+            // 演出の再生が完了したら子ノードに遷移する。
+            await _novelAnimation.PlayAnimation();
             _controller.MoveTo(_child);
-        }
-
-        public override void OnUpdate()
-        {
-            // Debug.Log("update");
         }
 
         public override void OnExit()
         {
-            // Debug.Log("exit");
+            _novelAnimation.OnExit(this);
         }
     }
 }

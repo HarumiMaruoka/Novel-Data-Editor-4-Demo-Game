@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class SampleBranchBehavior : NovelBranchBehaviour
 {
-    private int _index = 0;
+    [SerializeField]
+    private SelectionManager _selectionManager;
 
-    public override void OnUpdate(BranchNode branchNode)
+    private BranchNode _branchNode;
+
+    public override void OnEnter(BranchNode branchNode)
     {
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            _index++;
-            if (_index == branchNode.Elements.Count) _index = 0;
-            Debug.Log($"Index: {_index}");
-        }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            _index--;
-            if (_index == -1) _index = branchNode.Elements.Count - 1;
-            Debug.Log($"Index: {_index}");
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (branchNode.Elements[_index].Child != null)
-                branchNode.Controller.MoveTo(branchNode.Elements[_index].Child);
-        }
+        _branchNode = branchNode;
+        _selectionManager.ShowSelections(branchNode.Elements);
+        _selectionManager.OnSelected += OnSelected;
+    }
+
+    public override void OnExit(BranchNode branchNode)
+    {
+        _selectionManager.HideSelections();
+        _selectionManager.OnSelected -= OnSelected;
+    }
+
+    private void OnSelected(BranchElement select)
+    {
+        _branchNode.Controller.MoveTo(select.Child);
     }
 }

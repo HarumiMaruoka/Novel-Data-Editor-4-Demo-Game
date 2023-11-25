@@ -1,27 +1,32 @@
 // 日本語対応
+using Glib.NovelGameEditor;
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public abstract class SelectionView : MonoBehaviour
+public class SelectionView : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField]
-    private Text _text;
-
-    private int _index;
-
-    public int Index => _index;
+    private Text _textView;
+    [SerializeField]
+    private Image _image;
 
     public event Action<SelectionView> OnSelected;
 
-    public void Initialize(int index)
+    private BranchElement _selection;
+    public BranchElement Selection => _selection;
+
+    public void Initialize(BranchElement selection)
     {
-        _index = index;
+        _selection = selection;
+        _textView.text = _selection.Text;
     }
 
-    public void ApplyText(string text)
+    public void Dispose()
     {
-        _text.text = text;
+        OnSelected = null;
+        _selection = null;
     }
 
     public virtual void OnShow()
@@ -32,14 +37,26 @@ public abstract class SelectionView : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (Input.GetButtonDown($"Alpha{_index}"))
-        {
-            OnSelected?.Invoke(this);
-        }
+
     }
 
     public virtual void OnHide()
     {
         gameObject.SetActive(false);
+    }
+
+    public virtual void OnPointerClick(PointerEventData eventData)
+    {
+        OnSelected?.Invoke(this);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        _image.color = Color.gray;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        _image.color = Color.red;
     }
 }

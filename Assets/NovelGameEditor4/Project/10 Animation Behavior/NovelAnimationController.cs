@@ -11,7 +11,23 @@ namespace Glib.NovelGameEditor
         [SerializeField]
         private NovelAnimationBehavior[] _animations;
 
-        public async UniTask<bool> PlayAnimation(NovelAnimationData controlData)
+        public void OnEnter(AnimationNode node)
+        {
+            foreach (var animation in _animations)
+            {
+                animation.OnEneter(node);
+            }
+        }
+
+        public void OnExit(AnimationNode node)
+        {
+            foreach (var animation in _animations)
+            {
+                animation.OnExit(node);
+            }
+        }
+
+        public async UniTask<bool> PlayAnimation()
         {
             if (_animations == null || _animations.Length == 0)
             {
@@ -24,7 +40,7 @@ namespace Glib.NovelGameEditor
             // アニメーションを並列再生
             for (int i = 0; i < _animations.Length; i++)
             {
-                animationTasks[i] = _animations[i].PlayAnimationAsync(controlData);
+                animationTasks[i] = _animations[i].PlayAnimationAsync();
             }
 
             // 全てのアニメーションが正常に終了するか、キャンセルされるまで待機

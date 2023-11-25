@@ -6,6 +6,16 @@ namespace Glib.NovelGameEditor
 {
     public abstract class NovelAnimationBehavior : MonoBehaviour
     {
-        public abstract UniTask PlayAnimationAsync(NovelAnimationData animationData);
+        public abstract UniTask PlayAnimationAsync();
+
+        public virtual void OnEneter(AnimationNode node)
+        {
+
+        }
+
+        public virtual void OnExit(AnimationNode node)
+        {
+
+        }
     }
 }

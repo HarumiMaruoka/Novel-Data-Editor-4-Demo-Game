@@ -24,7 +24,6 @@ namespace Glib.NovelGameEditor
                     nodeView.Label.text = node.NodeName;
             });
             Add(container);
-
         }
     }
 }

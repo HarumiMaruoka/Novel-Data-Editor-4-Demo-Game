@@ -1,9 +1,11 @@
 // 日本語対応
 using Glib.NovelGameEditor;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SelectionManager : MonoBehaviour
+[Serializable]
+public class SelectionManager
 {
     [SerializeField]
     private Transform _selectionViewParent;
@@ -13,9 +15,9 @@ public class SelectionManager : MonoBehaviour
     private Stack<SelectionView> _alives = new Stack<SelectionView>();
     private Stack<SelectionView> _disposed = new Stack<SelectionView>();
 
+    public event Action<BranchElement> OnSelected;
 
-
-    public void ShowSelections(BranchElement[] branchElements)
+    public void ShowSelections(IEnumerable<BranchElement> branchElements)
     {
         foreach (var branchElement in branchElements)
         {
@@ -26,11 +28,12 @@ public class SelectionManager : MonoBehaviour
             }
             else
             {
-                instance = Instantiate(_selectionViewPrefab, _selectionViewParent);
+                instance = GameObject.Instantiate(_selectionViewPrefab, _selectionViewParent);
             }
 
+            instance.OnSelected += OnSelect;
             instance.OnShow();
-            instance.ApplyText(branchElement.Text);
+            instance.Initialize(branchElement);
 
             _alives.Push(instance);
         }
@@ -42,7 +45,13 @@ public class SelectionManager : MonoBehaviour
         {
             var dispose = _alives.Pop();
             dispose.OnHide();
+            dispose.Dispose();
             _disposed.Push(dispose);
         }
+    }
+
+    private void OnSelect(SelectionView selectionView)
+    {
+        OnSelected?.Invoke(selectionView.Selection);
     }
 }

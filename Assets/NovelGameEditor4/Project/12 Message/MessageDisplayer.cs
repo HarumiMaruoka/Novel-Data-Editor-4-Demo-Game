@@ -17,7 +17,7 @@ public class MessageDisplayer
 
     private float GameSpeed => GameSpeedController.Instance.GameSpeed;
 
-    public async UniTask DisplayMessageAnimation(string message, float interval, CancellationToken token)
+    public async UniTask ShowMessageAnimation(string message, float interval, CancellationToken token)
     {
         int index = -1;
         float elapsed = 0f;

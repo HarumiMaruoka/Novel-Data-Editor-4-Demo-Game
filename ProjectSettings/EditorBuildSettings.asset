@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scenario selection scene.unity
     guid: 7e869d3e584b78f4b9151bc000b52a9e
+  - enabled: 1
+    path: Assets/NovelGameEditor5/SampleScene1.unity
+    guid: 932725914f0bbc247875ccf23c5f765c
+  - enabled: 1
+    path: Assets/NovelGameEditor5/SampleScene2.unity
+    guid: 74dd191beddce934c8406d1d9c60c708
+  - enabled: 1
+    path: Assets/NovelGameEditor5/SampleScene3.unity
+    guid: 360515e4bd40f074ba52211c0326e7f8
   m_configObjects: {}

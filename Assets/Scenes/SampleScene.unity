@@ -1339,6 +1339,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 376281498}
   m_CullTransparentMesh: 1
+--- !u!114 &388559728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd7a98e9cbacf124dae57811a3fe188e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _viewData:
+    _guid: a6a7aca74914c384cb617a704988186b
+    _position: {x: 148, y: 509.12}
+    _title: 
+  _nodeName: 
+  _child: {fileID: 0}
+  _parents: []
+  _novelAnimation:
+    _animations:
+    - {fileID: 1113799852}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1885,6 +1907,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 567209311}
   m_CullTransparentMesh: 1
+--- !u!114 &596685557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd7a98e9cbacf124dae57811a3fe188e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _viewData:
+    _guid: 0ada02176bced994d8685a52bc55d59e
+    _position: {x: 142, y: 405}
+    _title: 
+  _nodeName: 
+  _child: {fileID: 0}
+  _parents: []
+  _novelAnimation:
+    _animations:
+    - {fileID: 807940255}
 --- !u!1 &614188576
 GameObject:
   m_ObjectHideFlags: 0
@@ -2191,6 +2235,8 @@ MonoBehaviour:
   - {fileID: 1687391516}
   - {fileID: 2090680134}
   - {fileID: 2108428462}
+  - {fileID: 596685557}
+  - {fileID: 388559728}
 --- !u!114 &807940255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2372,6 +2418,54 @@ MonoBehaviour:
   _sheetID: 0
   _sheetName: 1
   _ignoreRows: 0
+--- !u!1 &1113799851
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1113799853}
+  - component: {fileID: 1113799852}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1113799852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113799851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e702e5268b3c65642be75655b6342f3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _novelAnimationBehavior:
+  - _animations:
+    - {fileID: 1201524926}
+    - {fileID: 528574227}
+--- !u!4 &1113799853
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113799851}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1147839670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2405,7 +2499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _viewData:
     _guid: 89071d55a28c50a4295b74e5e187b837
-    _position: {x: 149, y: 270}
+    _position: {x: 148, y: 270}
     _title: 
   _nodeName: "\u6700\u521D\u306E\u6328\u62F6"
   _child: {fileID: 319383527}
@@ -4172,7 +4266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _viewData:
     _guid: 5e6738b1aa934744bbe6a52a5da2511c
-    _position: {x: 10, y: 278}
+    _position: {x: -11, y: 284}
     _title: 
   _nodeName: Fadeout
   _child: {fileID: 2108428462}
@@ -4243,9 +4337,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _viewData:
     _guid: 7126618b4894e954caa925547d326f07
-    _position: {x: 152, y: 155.8}
+    _position: {x: 154, y: 169}
     _title: 
-  _nodeName: 
+  _nodeName: SampleAnim
   _child: {fileID: 319383527}
   _parents:
   - {fileID: 2090680134}
@@ -4313,4 +4407,5 @@ SceneRoots:
   - {fileID: 807940251}
   - {fileID: 1944845702}
   - {fileID: 100759885}
+  - {fileID: 1113799853}
   - {fileID: 164340154}

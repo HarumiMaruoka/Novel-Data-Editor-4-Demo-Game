@@ -5,23 +5,19 @@ using UnityEngine.UI;
 public class AutoModeController : MonoBehaviour
 {
     [SerializeField]
-    private Button _startButton;
-    [SerializeField]
-    private Button _stopButton;
+    private Button _autoModeButton;
 
     private void Start()
     {
-        _startButton.onClick.AddListener(StartAutoMode);
-        _stopButton.onClick.AddListener(StopAutoMode);
+        _autoModeButton.onClick.AddListener(SwitchAutoMode);
     }
 
-    private void StartAutoMode()
+    private void SwitchAutoMode()
     {
-        AutoModeManager.Instance.StartAutoMode();
-    }
-
-    private void StopAutoMode()
-    {
-        AutoModeManager.Instance.StopAutoMode();
+        // オートモードボタンが押されたとき
+        // オートモードであればオートモードを解除する。
+        // そうでなければ、オートモードにする。
+        if (AutoModeManager.Instance.IsAutoMode) AutoModeManager.Instance.StopAutoMode();
+        else AutoModeManager.Instance.StartAutoMode();
     }
 }

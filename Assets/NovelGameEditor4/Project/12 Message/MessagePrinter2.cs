@@ -55,7 +55,7 @@ public class MessagePrinter2 : Glib.NovelGameEditor.NovelAnimationBehavior
             await UniTask.Yield(token);
             foreach (var message in _messages)
             {
-                await _messageDisplayer.DisplayMessageAnimation(message.Text, _interval, token);
+                await _messageDisplayer.ShowMessageAnimation(message.Text, _interval, token);
                 ClearAutoTimer();
                 await UniTask.WaitUntil(StepTrigger, cancellationToken: token);
                 LogContainer.Add(message);
